@@ -8,8 +8,6 @@ ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
 COPY requirements.txt /
 
 RUN apt update && \
-    apt install -y r-base && \
-    R -e "install.packages('httpuv', repos='http://cran.rstudio.com/')" && \
     pip install -r /requirements.txt
 
 COPY . /home/site/wwwroot
